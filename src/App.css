@@ -1,0 +1,1435 @@
+/* KIIP Study App - Dark Theme for Battery Saving */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: #252525;
+  --bg-elevated: #2d2d2d;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --accent: #4fc3f7;
+  --accent-dark: #0288d1;
+  --success: #66bb6a;
+  --error: #ef5350;
+  --warning: #ffa726;
+  --border: #3a3a3a;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.app {
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+}
+
+/* Chapter Selector */
+.chapter-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.chapter-selector label {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.chapter-selector select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  min-width: 300px;
+}
+
+.chapter-selector select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.chapter-selector select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.chapter-selector select option:disabled {
+  color: var(--text-muted);
+}
+
+.chapter-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.chapter-info p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Chapter Navigation */
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.chapter-nav button {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.chapter-nav button:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
+.chapter-nav button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* No Content Message */
+.no-content {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-nav button {
+  flex: 1;
+  padding: 1rem 0.25rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.main-nav button:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.main-nav button.active {
+  background: var(--bg-elevated);
+  border-bottom: 3px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+  padding: 1.5rem;
+  min-height: calc(100vh - 250px);
+}
+
+/* Category Filter */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-filter button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.category-filter button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.category-filter button.active {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+/* Vocabulary Grid */
+.vocabulary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+/* Vocabulary Card */
+.vocab-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid var(--border);
+}
+
+.vocab-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.vocab-main h3.korean {
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.vocab-main .pronunciation {
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.vocab-meanings {
+  background: var(--bg-elevated);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.vocab-meanings p {
+  margin: 0.25rem 0;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.vocab-meanings .label {
+  font-weight: 600;
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.vocab-example {
+  background: var(--bg-elevated);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  margin-top: 0.75rem;
+}
+
+.vocab-example h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.vocab-example .example-korean {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.vocab-example .example-english {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.vocab-example .example-nepali {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.tap-hint {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Grammar Section */
+.grammar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grammar-section {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.grammar-header {
+  background: var(--bg-elevated);
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  border-left: 4px solid var(--accent);
+}
+
+.grammar-pattern {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.grammar-meanings {
+  color: var(--text-primary);
+}
+
+.grammar-meanings p {
+  color: var(--text-primary);
+  margin: 0.25rem 0;
+}
+
+.grammar-meanings .label {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.grammar-description,
+.grammar-when-to-use,
+.grammar-where-to-use,
+.grammar-formality,
+.grammar-comparison,
+.grammar-explanation,
+.grammar-formation {
+  background: var(--bg-elevated);
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.grammar-description h3,
+.grammar-when-to-use h3,
+.grammar-where-to-use h3,
+.grammar-formality h3,
+.grammar-comparison h3,
+.grammar-explanation h3,
+.grammar-formation h3,
+.grammar-examples h3 {
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.grammar-description p,
+.grammar-where-to-use p,
+.grammar-formality p,
+.grammar-explanation p,
+.grammar-formation p {
+  color: var(--text-primary);
+  margin: 0.4rem 0;
+  line-height: 1.6;
+}
+
+.desc-en, .where-en, .formality-en {
+  color: var(--text-primary);
+}
+
+.desc-ne, .where-ne, .formality-ne {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.formation-rule {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.formation-note-en,
+.formation-note-ne {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* When to Use Section */
+.situations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.situation-item {
+  background: var(--bg-card);
+  border-radius: 10px;
+  padding: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.situation-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.situation-number {
+  background: var(--accent);
+  color: var(--bg-primary);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+.situation-text {
+  flex: 1;
+}
+
+.situation-en {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0 0 0.2rem 0;
+}
+
+.situation-ne {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.situation-example {
+  background: var(--bg-secondary);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.situation-example .example-korean {
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.situation-example .example-english {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.situation-example .example-nepali {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Conjugation Table */
+.conjugation-section {
+  margin-top: 1rem;
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.toggle-conjugation {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.toggle-conjugation:hover {
+  opacity: 0.9;
+}
+
+.conjugation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-elevated);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+
+.conjugation-table th {
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.conjugation-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.conjugation-table tr:last-child td {
+  border-bottom: none;
+}
+
+.conjugation-table tr:nth-child(even) {
+  background: var(--bg-card);
+}
+
+.stem-cell {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.result-cell {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.meaning-en {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.meaning-ne {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Comparison Section */
+.simple-comparison p,
+.detailed-comparison p {
+  color: var(--text-primary);
+  margin: 0.4rem 0;
+}
+
+.comparison-en, .diff-en {
+  color: var(--text-primary);
+}
+
+.comparison-ne, .diff-ne {
+  color: var(--text-secondary);
+}
+
+.comparison-item {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--warning);
+}
+
+.comparison-item h4 {
+  color: var(--warning);
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.comparison-examples {
+  background: var(--bg-secondary);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 0.75rem;
+}
+
+.comparison-examples p {
+  margin: 0.25rem 0;
+  color: var(--text-primary);
+}
+
+.comparison-examples .label {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+/* Example Navigation */
+.example-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.example-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.example-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.example-btn.active {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
+.example-content {
+  background: var(--bg-elevated);
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--accent);
+}
+
+.example-context {
+  background: var(--bg-card);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.context-label {
+  font-weight: 600;
+  color: var(--warning);
+  margin-right: 0.5rem;
+}
+
+.context-en {
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}
+
+.context-ne {
+  color: var(--text-muted);
+}
+
+.example-content .example-korean {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.example-content .example-english {
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.example-content .example-nepali {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.example-arrows {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.example-arrows button {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.example-arrows button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.example-arrows button:disabled {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* Dialogue Section */
+.dialogue-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dialogue-section {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.dialogue-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dialogue-header h2 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.dialogue-title-en {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.dialogue-title-ne {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.dialogue-situation {
+  background: var(--bg-elevated);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.dialogue-situation p {
+  color: var(--text-primary);
+  margin: 0.2rem 0;
+}
+
+.toggle-btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.6rem 1.5rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.toggle-btn:hover {
+  opacity: 0.9;
+}
+
+.dialogue-conversation {
+  margin-top: 1rem;
+}
+
+.dialogue-line {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 12px;
+}
+
+.dialogue-line.staff {
+  background: var(--bg-elevated);
+  margin-right: 5%;
+  border-left: 3px solid var(--accent);
+}
+
+.dialogue-line.customer {
+  background: var(--bg-secondary);
+  margin-left: 5%;
+  border-right: 3px solid var(--warning);
+}
+
+.dialogue-line .speaker {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.dialogue-line.customer .speaker {
+  color: var(--warning);
+}
+
+.dialogue-line .korean-text {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.dialogue-line .english-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.dialogue-line .nepali-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Reading Section */
+.reading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reading-section {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.reading-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.reading-header h2 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.reading-title-en {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.reading-title-ne {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.language-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.language-tabs button {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.language-tabs button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.language-tabs button.active {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.reading-content {
+  line-height: 1.8;
+}
+
+.reading-content h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.content-korean,
+.content-english,
+.content-nepali {
+  background: var(--bg-elevated);
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  white-space: pre-line;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.content-korean {
+  border-left: 4px solid var(--accent);
+}
+
+.content-korean p {
+  color: var(--text-primary);
+}
+
+.content-english {
+  border-left: 4px solid var(--success);
+}
+
+.content-english p {
+  color: var(--text-primary);
+}
+
+.content-nepali {
+  border-left: 4px solid var(--warning);
+}
+
+.content-nepali p {
+  color: var(--text-primary);
+}
+
+/* Practice Section */
+.practice-container {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.exercise-tabs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.exercise-tabs button {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.exercise-tabs button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.exercise-tabs button.active {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.exercise-instruction {
+  background: var(--bg-elevated);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  border-left: 3px solid var(--accent);
+}
+
+.exercise-instruction p {
+  color: var(--text-primary);
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.question-item {
+  background: var(--bg-elevated);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+}
+
+.question-text {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.question-nepali {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.answer-input {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.answer-input input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  transition: all 0.3s;
+}
+
+.answer-input input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.answer-input input::placeholder {
+  color: var(--text-muted);
+}
+
+.answer-input button {
+  padding: 0.7rem 1.5rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.answer-input button:hover {
+  opacity: 0.9;
+}
+
+.answer-result {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.answer-result p {
+  margin: 0;
+}
+
+.answer-result.correct {
+  background: rgba(102, 187, 106, 0.2);
+  color: var(--success);
+  border-left: 3px solid var(--success);
+}
+
+.answer-result.incorrect {
+  background: rgba(239, 83, 80, 0.2);
+  color: var(--error);
+  border-left: 3px solid var(--error);
+}
+
+/* Footer */
+.app-footer {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.app-footer p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .chapter-info h2 {
+    font-size: 1.1rem;
+  }
+
+  .chapter-info p {
+    font-size: 0.85rem;
+  }
+
+  .chapter-selector {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .chapter-selector select {
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .chapter-nav {
+    gap: 0.5rem;
+  }
+
+  .chapter-nav button {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* Mobile Tab Navigation - Fit in screen */
+  .main-nav {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .main-nav button {
+    flex: 1;
+    min-width: 0;
+    padding: 0.7rem 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .vocabulary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 0.75rem;
+  }
+
+  /* Category filter - wrap on multiple lines */
+  .category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .category-filter button {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .dialogue-line.staff,
+  .dialogue-line.customer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .example-arrows {
+    flex-direction: column;
+  }
+
+  .grammar-pattern {
+    font-size: 1.4rem;
+  }
+
+  .grammar-section {
+    padding: 1rem;
+  }
+
+  .grammar-header {
+    padding: 1rem;
+  }
+
+  .conjugation-table {
+    font-size: 0.85rem;
+  }
+
+  .conjugation-table th,
+  .conjugation-table td {
+    padding: 0.5rem;
+  }
+
+  .vocab-card {
+    padding: 1rem;
+  }
+
+  .vocab-main h3.korean {
+    font-size: 1.4rem;
+  }
+}
+
+/* Responsive Design - Small Mobile */
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0.75rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .chapter-info h2 {
+    font-size: 1rem;
+  }
+
+  .chapter-info p {
+    font-size: 0.8rem;
+  }
+
+  .chapter-nav button {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  /* Compact tabs for very small screens - all fit */
+  .main-nav button {
+    flex: 1;
+    min-width: 0;
+    padding: 0.6rem 0.15rem;
+    font-size: 0.65rem;
+  }
+
+  .category-filter button {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .main-content {
+    padding: 0.5rem;
+  }
+
+  .grammar-section,
+  .dialogue-section,
+  .reading-section,
+  .practice-container {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .grammar-header,
+  .grammar-description,
+  .grammar-when-to-use,
+  .grammar-where-to-use,
+  .grammar-formality,
+  .grammar-comparison,
+  .grammar-formation {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .grammar-pattern {
+    font-size: 1.2rem;
+  }
+
+  .grammar-meanings p {
+    font-size: 0.85rem;
+  }
+
+  .situation-item {
+    padding: 0.75rem;
+  }
+
+  .situation-number {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+
+  .situation-en {
+    font-size: 0.9rem;
+  }
+
+  .situation-ne {
+    font-size: 0.8rem;
+  }
+
+  .example-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .example-content {
+    padding: 0.75rem;
+  }
+
+  .example-content .example-korean {
+    font-size: 1rem;
+  }
+
+  .vocab-card {
+    padding: 0.75rem;
+  }
+
+  .vocab-main h3.korean {
+    font-size: 1.3rem;
+  }
+
+  .vocab-meanings,
+  .vocab-example {
+    padding: 0.6rem;
+  }
+
+  .vocab-meanings p,
+  .vocab-example p {
+    font-size: 0.85rem;
+  }
+
+  .dialogue-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .dialogue-line {
+    padding: 0.75rem;
+  }
+
+  .dialogue-line .korean-text {
+    font-size: 1rem;
+  }
+
+  .dialogue-line .english-text,
+  .dialogue-line .nepali-text {
+    font-size: 0.8rem;
+  }
+
+  .reading-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .language-tabs button {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .content-korean,
+  .content-english,
+  .content-nepali {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .exercise-tabs button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .exercise-instruction {
+    padding: 0.75rem;
+  }
+
+  .exercise-instruction p {
+    font-size: 0.85rem;
+  }
+
+  .question-item {
+    padding: 0.75rem;
+  }
+
+  .question-text {
+    font-size: 0.95rem;
+  }
+
+  .answer-input {
+    flex-direction: column;
+  }
+
+  .answer-input input {
+    min-width: 100%;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .answer-input button {
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  .toggle-btn,
+  .toggle-conjugation {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .app-footer {
+    padding: 0.75rem;
+  }
+
+  .app-footer p {
+    font-size: 0.8rem;
+  }
+
+  /* Conjugation table scroll on mobile */
+  .conjugation-section {
+    overflow-x: auto;
+  }
+
+  .conjugation-table {
+    font-size: 0.8rem;
+    min-width: 400px;
+  }
+
+  .conjugation-table th,
+  .conjugation-table td {
+    padding: 0.4rem 0.5rem;
+  }
+}
