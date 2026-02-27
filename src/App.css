@@ -55,6 +55,184 @@ body {
   color: var(--accent);
 }
 
+/* Search Bar */
+.search-container {
+  position: relative;
+  max-width: 400px;
+  margin: 0.75rem auto;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.2);
+}
+
+.search-icon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-clear {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.search-clear:hover {
+  color: var(--text-primary);
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  max-height: 350px;
+  overflow-y: auto;
+  z-index: 200;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.search-result-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+  position: relative;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: var(--bg-elevated);
+}
+
+.result-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.result-korean,
+.result-pattern {
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.result-chapter {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+}
+
+.result-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.result-english {
+  color: var(--text-primary);
+}
+
+.result-nepali {
+  color: var(--text-muted);
+}
+
+.result-meaning {
+  color: var(--text-secondary);
+}
+
+.result-type {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.75rem;
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.vocab-tag {
+  background: rgba(79, 195, 247, 0.2);
+  color: var(--accent);
+}
+
+.grammar-tag {
+  background: rgba(255, 167, 38, 0.2);
+  color: var(--warning);
+}
+
+.no-results {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Highlighted Item Animation */
+.highlighted {
+  animation: highlightPulse 3s ease-out;
+}
+
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 0 0 3px var(--accent);
+    transform: scale(1.02);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(79, 195, 247, 0.5);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+}
+
+.highlighted > .vocab-card,
+.highlighted > .grammar-section {
+  border-color: var(--accent);
+}
+
 /* Chapter Selector */
 .chapter-selector {
   display: flex;
@@ -1116,6 +1294,29 @@ body {
     font-size: 1.5rem;
   }
 
+  /* Search responsive */
+  .search-container {
+    max-width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .search-input-wrapper {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+  }
+
+  .search-results {
+    max-height: 280px;
+  }
+
+  .result-korean,
+  .result-pattern {
+    font-size: 1rem;
+  }
+
   .chapter-info h2 {
     font-size: 1.1rem;
   }
@@ -1226,6 +1427,57 @@ body {
   .app-header h1 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+  }
+
+  /* Search small mobile */
+  .search-container {
+    margin: 0.4rem 0;
+  }
+
+  .search-input-wrapper {
+    padding: 0.35rem 0.6rem;
+    border-radius: 20px;
+  }
+
+  .search-icon {
+    font-size: 0.9rem;
+    margin-right: 0.4rem;
+  }
+
+  .search-input {
+    font-size: 0.85rem;
+  }
+
+  .search-input::placeholder {
+    font-size: 0.8rem;
+  }
+
+  .search-results {
+    max-height: 250px;
+    border-radius: 10px;
+  }
+
+  .search-result-item {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .result-korean,
+  .result-pattern {
+    font-size: 0.95rem;
+  }
+
+  .result-chapter {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .result-sub {
+    font-size: 0.8rem;
+  }
+
+  .result-type {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.35rem;
   }
 
   .chapter-info h2 {

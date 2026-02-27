@@ -1,9 +1,10 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import VocabularyCard from './components/VocabularyCard';
 import GrammarSection from './components/GrammarSection';
 import DialogueSection from './components/DialogueSection';
 import ReadingSection from './components/ReadingSection';
 import PracticeSection from './components/PracticeSection';
+import SearchBar from './components/SearchBar';
 import { chapters, availableChapters, chapterTitles } from './data/chapters';
 import './App.css';
 
@@ -11,6 +12,11 @@ function App() {
   const [currentChapter, setCurrentChapter] = useState(availableChapters[0] || 4);
   const [activeTab, setActiveTab] = useState('vocabulary');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [highlightedId, setHighlightedId] = useState(null);
+
+  // Refs for scrolling to elements
+  const vocabRefs = useRef({});
+  const grammarRefs = useRef({});
 
   // Get current chapter data
   const chapterData = useMemo(() => {
@@ -37,12 +43,57 @@ function App() {
     setCurrentChapter(chapterNum);
     setSelectedCategory('all');
     setActiveTab('vocabulary');
+    setHighlightedId(null);
+  };
+
+  // Handle search result click
+  const handleSearchResultClick = (result) => {
+    // Change to the correct chapter
+    if (result.chapter !== currentChapter) {
+      setCurrentChapter(result.chapter);
+    }
+
+    // Set the correct tab
+    if (result.type === 'vocabulary') {
+      setActiveTab('vocabulary');
+      setSelectedCategory('all'); // Show all to ensure the word is visible
+
+      // Wait for state update and DOM render, then scroll
+      setTimeout(() => {
+        const element = vocabRefs.current[`${result.chapter}-${result.id}`];
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setHighlightedId(`vocab-${result.chapter}-${result.id}`);
+          // Remove highlight after 3 seconds
+          setTimeout(() => setHighlightedId(null), 3000);
+        }
+      }, 100);
+    } else if (result.type === 'grammar') {
+      setActiveTab('grammar');
+
+      setTimeout(() => {
+        const element = grammarRefs.current[`${result.chapter}-${result.id}`];
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setHighlightedId(`grammar-${result.chapter}-${result.id}`);
+          setTimeout(() => setHighlightedId(null), 3000);
+        }
+      }, 100);
+    }
   };
 
   return (
     <div className="app">
       <header className="app-header">
         <h1>KIIP Level 3</h1>
+
+        {/* Search Bar */}
+        <SearchBar
+          vocabulary={vocabulary}
+          grammar={grammar}
+          allChapters={chapters}
+          onResultClick={handleSearchResultClick}
+        />
 
         {/* Chapter Selector */}
         <div className="chapter-selector">
@@ -79,13 +130,13 @@ function App() {
             onClick={() => handleChapterChange(currentChapter - 1)}
             disabled={!availableChapters.includes(currentChapter - 1)}
           >
-            Previous Chapter
+            Previous
           </button>
           <button
             onClick={() => handleChapterChange(currentChapter + 1)}
             disabled={!availableChapters.includes(currentChapter + 1)}
           >
-            Next Chapter
+            Next
           </button>
         </div>
       </header>
@@ -95,7 +146,7 @@ function App() {
           className={activeTab === 'vocabulary' ? 'active' : ''}
           onClick={() => setActiveTab('vocabulary')}
         >
-          Vocabulary
+          Vocab
         </button>
         <button
           className={activeTab === 'grammar' ? 'active' : ''}
@@ -146,7 +197,13 @@ function App() {
 
             <div className="vocabulary-grid">
               {filteredVocabulary.map(word => (
-                <VocabularyCard key={word.id} word={word} />
+                <div
+                  key={word.id}
+                  ref={el => vocabRefs.current[`${currentChapter}-${word.id}`] = el}
+                  className={highlightedId === `vocab-${currentChapter}-${word.id}` ? 'highlighted' : ''}
+                >
+                  <VocabularyCard word={word} />
+                </div>
               ))}
             </div>
           </section>
@@ -156,7 +213,13 @@ function App() {
           <section className="grammar-container">
             {grammar.length > 0 ? (
               grammar.map(g => (
-                <GrammarSection key={g.id} grammar={g} />
+                <div
+                  key={g.id}
+                  ref={el => grammarRefs.current[`${currentChapter}-${g.id}`] = el}
+                  className={highlightedId === `grammar-${currentChapter}-${g.id}` ? 'highlighted' : ''}
+                >
+                  <GrammarSection grammar={g} />
+                </div>
               ))
             ) : (
               <p className="no-content">No grammar content available for this chapter yet.</p>
