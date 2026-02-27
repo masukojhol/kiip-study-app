@@ -19,7 +19,7 @@ function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
 
   // Search across all chapters
   useEffect(() => {
-    if (query.trim().length < 2) {
+    if (!query || query.trim().length < 2) {
       setResults([]);
       return;
     }
@@ -27,24 +27,39 @@ function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
     const searchQuery = query.toLowerCase().trim();
     const foundResults = [];
 
+    // Ensure allChapters exists
+    if (!allChapters || typeof allChapters !== 'object') {
+      return;
+    }
+
     // Search in all chapters
     Object.entries(allChapters).forEach(([chapterNum, chapterData]) => {
+      if (!chapterData) return;
+
       // Search vocabulary
-      if (chapterData.vocabulary) {
-        chapterData.vocabulary.forEach(word => {
-          const matchKorean = word.korean.toLowerCase().includes(searchQuery);
-          const matchEnglish = word.english.toLowerCase().includes(searchQuery);
-          const matchNepali = word.nepali && word.nepali.toLowerCase().includes(searchQuery);
-          const matchPronunciation = word.pronunciation && word.pronunciation.toLowerCase().includes(searchQuery);
+      const vocabList = chapterData.vocabulary;
+      if (vocabList && Array.isArray(vocabList)) {
+        vocabList.forEach(word => {
+          if (!word) return;
+
+          const korean = word.korean || '';
+          const english = word.english || '';
+          const nepali = word.nepali || '';
+          const pronunciation = word.pronunciation || '';
+
+          const matchKorean = korean.toLowerCase().includes(searchQuery);
+          const matchEnglish = english.toLowerCase().includes(searchQuery);
+          const matchNepali = nepali.toLowerCase().includes(searchQuery);
+          const matchPronunciation = pronunciation.toLowerCase().includes(searchQuery);
 
           if (matchKorean || matchEnglish || matchNepali || matchPronunciation) {
             foundResults.push({
               type: 'vocabulary',
               chapter: parseInt(chapterNum),
               id: word.id,
-              korean: word.korean,
-              english: word.english,
-              nepali: word.nepali,
+              korean: korean,
+              english: english,
+              nepali: nepali,
               category: word.category,
               matchType: matchKorean ? 'korean' : matchEnglish ? 'english' : matchNepali ? 'nepali' : 'pronunciation'
             });
@@ -53,19 +68,26 @@ function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
       }
 
       // Search grammar patterns
-      if (chapterData.grammar) {
-        chapterData.grammar.forEach(g => {
-          const matchPattern = g.pattern.toLowerCase().includes(searchQuery);
-          const matchMeaningEn = g.meaning.english.toLowerCase().includes(searchQuery);
-          const matchMeaningNe = g.meaning.nepali && g.meaning.nepali.toLowerCase().includes(searchQuery);
+      const grammarList = chapterData.grammar;
+      if (grammarList && Array.isArray(grammarList)) {
+        grammarList.forEach(g => {
+          if (!g || !g.meaning) return;
+
+          const pattern = g.pattern || '';
+          const meaningEn = g.meaning.english || '';
+          const meaningNe = g.meaning.nepali || '';
+
+          const matchPattern = pattern.toLowerCase().includes(searchQuery);
+          const matchMeaningEn = meaningEn.toLowerCase().includes(searchQuery);
+          const matchMeaningNe = meaningNe.toLowerCase().includes(searchQuery);
 
           if (matchPattern || matchMeaningEn || matchMeaningNe) {
             foundResults.push({
               type: 'grammar',
               chapter: parseInt(chapterNum),
               id: g.id,
-              pattern: g.pattern,
-              meaning: g.meaning.english,
+              pattern: pattern,
+              meaning: meaningEn,
               matchType: matchPattern ? 'pattern' : 'meaning'
             });
           }
@@ -73,8 +95,11 @@ function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
       }
     });
 
-    // Limit results
+    // Limit results and ensure dropdown opens
     setResults(foundResults.slice(0, 15));
+    if (foundResults.length > 0) {
+      setIsOpen(true);
+    }
   }, [query, allChapters]);
 
   const handleResultClick = (result) => {
