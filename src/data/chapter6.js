@@ -59,6 +59,7 @@ export const urbanVocabulary = [
   {
     id: 1,
     page: 74,
+    category: 'Urban',
     section: 'Q1-Urban',
     korean: '거리가 깨끗하다',
     pronunciation: 'georiga kkaekkeuthada',
@@ -74,6 +75,7 @@ export const urbanVocabulary = [
   {
     id: 2,
     page: 74,
+    category: 'Urban',
     section: 'Q1-Urban',
     korean: '공기가 탁하다',
     pronunciation: 'gonggiga takada',
@@ -89,6 +91,7 @@ export const urbanVocabulary = [
   {
     id: 3,
     page: 74,
+    category: 'Urban',
     section: 'Q1-Urban',
     korean: '문화 시설이 많다',
     pronunciation: 'munhwa shiseori manta',
@@ -104,6 +107,7 @@ export const urbanVocabulary = [
   {
     id: 4,
     page: 74,
+    category: 'Urban',
     section: 'Q1-Urban',
     korean: '소음이 심하다',
     pronunciation: 'soeumi shimhada',
@@ -119,6 +123,7 @@ export const urbanVocabulary = [
   {
     id: 5,
     page: 74,
+    category: 'Urban',
     section: 'Q1-Urban',
     korean: '걸어서 공원에 갈 수 있다',
     pronunciation: 'georeoseo gongwone gal su itda',
@@ -134,6 +139,7 @@ export const urbanVocabulary = [
   {
     id: 6,
     page: 74,
+    category: 'Urban',
     section: 'Q1-Urban',
     korean: '산책로가 있다',
     pronunciation: 'sanchaekroga itda',
@@ -149,6 +155,7 @@ export const urbanVocabulary = [
   {
     id: 7,
     page: 74,
+    category: 'Urban',
     section: 'Q1-Urban',
     korean: '빌딩 숲/산업 단지',
     pronunciation: 'bilding sup / saneop danji',
@@ -164,6 +171,7 @@ export const urbanVocabulary = [
   {
     id: 8,
     page: 74,
+    category: 'Urban',
     section: 'Q1-Urban',
     korean: '안전하다',
     pronunciation: 'anjeonhada',
@@ -186,6 +194,7 @@ export const ruralVocabulary = [
   {
     id: 9,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '자연환경이 좋다',
     pronunciation: 'jayeonhwangyeongi jota',
@@ -201,6 +210,7 @@ export const ruralVocabulary = [
   {
     id: 10,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '한적하다',
     pronunciation: 'hanjeokada',
@@ -216,6 +226,7 @@ export const ruralVocabulary = [
   {
     id: 11,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '공기가 맑다',
     pronunciation: 'gonggiga makda',
@@ -231,6 +242,7 @@ export const ruralVocabulary = [
   {
     id: 12,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '과수원',
     pronunciation: 'gwasuwon',
@@ -246,6 +258,7 @@ export const ruralVocabulary = [
   {
     id: 13,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '직접 농사를 짓다',
     pronunciation: 'jikjeop nongsareul jitda',
@@ -261,6 +274,7 @@ export const ruralVocabulary = [
   {
     id: 14,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '경치가 좋다',
     pronunciation: 'gyeongchiga jota',
@@ -276,6 +290,7 @@ export const ruralVocabulary = [
   {
     id: 15,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '비닐하우스',
     pronunciation: 'binilhauseu',
@@ -291,6 +306,7 @@ export const ruralVocabulary = [
   {
     id: 16,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '논',
     pronunciation: 'non',
@@ -306,6 +322,7 @@ export const ruralVocabulary = [
   {
     id: 17,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '밭',
     pronunciation: 'bat',
@@ -321,6 +338,7 @@ export const ruralVocabulary = [
   {
     id: 18,
     page: 74,
+    category: 'Rural',
     section: 'Q2-Rural',
     korean: '하천이 흐르다',
     pronunciation: 'hacheoni heureda',
@@ -382,195 +400,89 @@ export const environmentPreference = {
 export const grammar1 = {
   id: 1,
   page: 75,
-  title: {
-    korean: '피동',
-    english: 'Passive Voice',
-    nepali: 'कर्मवाच्य'
+  pattern: "피동 (Passive Voice)",
+  meaning: {
+    english: "Passive form - indicates an action that happens by another force",
+    nepali: "कर्मवाच्य - अर्को शक्तिद्वारा हुने कार्य जनाउँछ"
   },
   description: {
-    korean: '다른 힘에 의해 이루어지는 일을 나타낸다.',
-    english: 'Indicates an action that happens by another force.',
-    nepali: 'अर्को शक्तिद्वारा हुने कार्य जनाउँछ।'
+    english: "Passive voice in Korean is formed by adding suffixes (-이-, -히-, -리-, -기-) to verb stems. It indicates that the subject receives the action rather than performing it.",
+    nepali: "कोरियनमा कर्मवाच्य क्रियाको मूलमा प्रत्यय (-이-, -히-, -리-, -기-) थपेर बनाइन्छ। यसले कर्ताले कार्य गर्नुको सट्टा कार्य प्राप्त गर्छ भन्ने जनाउँछ।"
   },
-  introExamples: [
-    {
-      speaker: '가',
-      korean: '왜 이렇게 늦었어요? 무슨 일이 있었어요?',
-      english: 'Why are you so late? Did something happen?',
-      nepali: 'किन यति ढिलो? केहि भयो?'
-    },
-    {
-      speaker: '나',
-      korean: '퇴근 시간이라서 길이 많이 막혔어요.',
-      english: 'It was rush hour so the road was very congested.',
-      nepali: 'कार्यालय छुट्ने समय भएकोले बाटो धेरै जाम भएको थियो।',
-      highlight: '막혔어요'
-    },
-    {
-      korean: '자는 동안 모기한테 팔을 물려서 너무 가렵다.',
-      english: 'While sleeping, I got bitten on the arm by a mosquito so it\'s very itchy.',
-      nepali: 'सुत्दा लामखुट्टेले हातमा टोकेकोले धेरै चिलाउँछ।',
-      highlight: '물려서'
-    },
-    {
-      korean: '친구와 전화를 하는 중에 갑자기 전화가 끊겼다.',
-      english: 'While talking on the phone with a friend, the call suddenly got disconnected.',
-      nepali: 'साथीसँग फोनमा कुरा गर्दै गर्दा अचानक फोन काटियो।',
-      highlight: '끊겼다'
-    }
-  ],
-  dialogueExample: {
-    situation: {
-      korean: '안젤라가 이 씨와 경치에 대해 이야기합니다.',
-      english: 'Angela talks with Mr. Lee about the scenery.',
-      nepali: 'एन्जेलाले श्री ली सँग दृश्यको बारेमा कुरा गर्छिन्।'
-    },
-    conversation: [
+  whenToUse: {
+    situations: [
       {
-        speaker: '안젤라',
-        korean: '와, 방 안에서 산이 보이네요?',
-        english: 'Wow, you can see mountains from inside the room?',
-        nepali: 'वाह, कोठा भित्रबाट पहाड देखिन्छ?',
-        highlight: '보이네요'
-      },
-      {
-        speaker: '이 씨',
-        korean: '네, 경치가 좋지요?',
-        english: 'Yes, the scenery is nice, isn\'t it?',
-        nepali: 'हो, दृश्य राम्रो छ, होइन?'
-      }
-    ]
-  },
-  passiveSuffixes: [
-    {
-      suffix: '-이-',
-      activeVerbs: [
-        { active: '보다', passive: '보이다', english: 'to see → to be seen', nepali: 'हेर्नु → देखिनु' },
-        { active: '놓다', passive: '놓이다', english: 'to put → to be put', nepali: 'राख्नु → राखिनु' }
-      ]
-    },
-    {
-      suffix: '-히-',
-      activeVerbs: [
-        { active: '잡다', passive: '잡히다', english: 'to catch → to be caught', nepali: 'समात्नु → समातिनु' },
-        { active: '먹다', passive: '먹히다', english: 'to eat → to be eaten', nepali: 'खानु → खाइनु' }
-      ]
-    },
-    {
-      suffix: '-리-',
-      activeVerbs: [
-        { active: '열다', passive: '열리다', english: 'to open → to be opened', nepali: 'खोल्नु → खुल्नु' },
-        { active: '듣다', passive: '들리다', english: 'to hear → to be heard', nepali: 'सुन्नु → सुनिनु' }
-      ]
-    },
-    {
-      suffix: '-기-',
-      activeVerbs: [
-        { active: '끊다', passive: '끊기다', english: 'to cut/hang up → to be cut', nepali: 'काट्नु → काटिनु' },
-        { active: '쫓다', passive: '쫓기다', english: 'to chase → to be chased', nepali: 'पछ्याउनु → पछ्याइनु' }
-      ]
-    }
-  ],
-  additionalVocabulary: [
-    {
-      korean: '비명 소리',
-      pronunciation: 'bimyeong sori',
-      english: 'Screaming sound',
-      nepali: 'चिच्याउने आवाज'
-    },
-    {
-      korean: '지역',
-      pronunciation: 'jiyeok',
-      english: 'Region, area',
-      nepali: 'क्षेत्र'
-    },
-    {
-      korean: '범인',
-      pronunciation: 'beomin',
-      english: 'Criminal, culprit',
-      nepali: 'अपराधी'
-    }
-  ],
-  practiceSection: {
-    instruction: {
-      korean: '그림을 보고 보기와 같이 친구와 이야기해 보세요.',
-      english: 'Look at the pictures and talk with friends as shown in the example.',
-      nepali: 'तस्विरहरू हेर्नुहोस् र उदाहरण जस्तै साथीसँग कुरा गर्नुहोस्।'
-    },
-    example: {
-      question: {
-        korean: '왜 그래요? 무슨 일이에요?',
-        english: 'What\'s wrong? What happened?',
-        nepali: 'के भयो? के समस्या छ?'
-      },
-      answer: {
-        korean: '갑자기 엘리베이터가 흔들렸어요.',
-        english: 'The elevator suddenly shook.',
-        nepali: 'अचानक लिफ्ट हल्लियो।'
-      }
-    },
-    exercises: [
-      {
-        id: 1,
-        image: 'dormitory door closing',
-        hint: '기숙사 문이 잠기다',
-        answer: {
-          korean: '기숙사 문이 잠겼어요.',
-          english: 'The dormitory door got locked.',
-          nepali: 'छात्रावासको ढोका बन्द भयो।'
+        situation: {
+          english: "When something happens to the subject by external force",
+          nepali: "जब बाह्य शक्तिद्वारा विषयमा केहि हुन्छ"
+        },
+        example: {
+          korean: "퇴근 시간이라서 길이 많이 막혔어요.",
+          english: "The road was congested because it was rush hour.",
+          nepali: "कार्यालय छुट्ने समय भएकोले बाटो धेरै जाम भयो।"
         }
       },
       {
-        id: 2,
-        image: 'hearing screaming sound',
-        hint: '저쪽에서 비명 소리가 들리다',
-        answer: {
-          korean: '저쪽에서 비명 소리가 들렸어요.',
-          english: 'A screaming sound was heard from over there.',
-          nepali: 'त्यतातिरबाट चिच्याउने आवाज सुनियो।'
-        }
-      },
-      {
-        id: 3,
-        image: 'door closing by itself',
-        hint: '아무도 없는데 문이 닫히다',
-        answer: {
-          korean: '아무도 없는데 문이 닫혔어요.',
-          english: 'The door closed even though no one was there.',
-          nepali: 'कोही नभए पनि ढोका बन्द भयो।'
+        situation: {
+          english: "When describing something visible or audible",
+          nepali: "देखिने वा सुनिने कुरा वर्णन गर्दा"
+        },
+        example: {
+          korean: "방 안에서 산이 보여요.",
+          english: "Mountains are visible from inside the room.",
+          nepali: "कोठा भित्रबाट पहाड देखिन्छ।"
         }
       }
     ]
   },
-  newsDiscussion: {
-    instruction: {
-      korean: '다음의 뉴스에 대해 친구들과 이야기해 보세요.',
-      english: 'Talk about the following news with your friends.',
-      nepali: 'निम्न समाचारको बारेमा साथीहरूसँग कुरा गर्नुहोस्।'
+  formation: {
+    rule: "Verb stem + 이/히/리/기 + 다",
+    notes: {
+      english: "The passive suffix depends on the verb stem ending. -이- (보다→보이다), -히- (잡다→잡히다), -리- (열다→열리다), -기- (끊다→끊기다)",
+      nepali: "कर्मवाच्य प्रत्यय क्रिया मूलको अन्त्यमा निर्भर गर्छ। -이- (보다→보이다), -히- (잡다→잡히다), -리- (열다→열리다), -기- (끊다→끊기다)"
     },
-    newsItems: [
-      {
-        korean: '강원 지역, 밤사이에 눈 많이 쌓여',
-        english: 'Gangwon region, heavy snow accumulated overnight',
-        nepali: 'गाङ्वन क्षेत्र, रातिमा धेरै हिउँ जम्यो'
-      },
-      {
-        korean: '3개월 만에 범인 잡혀',
-        english: 'Criminal caught after 3 months',
-        nepali: '३ महिना पछि अपराधी समातियो'
-      },
-      {
-        korean: '지난달 유럽 시장에서 한국 자동차 많이 팔렸다',
-        english: 'Korean cars sold a lot in European market last month',
-        nepali: 'गत महिना युरोपेली बजारमा कोरियाली कार धेरै बिक्यो'
-      }
-    ],
-    exampleResponse: {
-      korean: '강원 지역은 밤사이에 눈이 많이 쌓였어요.',
-      english: 'In Gangwon region, a lot of snow accumulated overnight.',
-      nepali: 'गाङ्वन क्षेत्रमा रातिमा धेरै हिउँ जम्यो।'
+    conjugationTable: [
+      { verb: "보다 (to see)", stem: "보", result: "보이다", english: "to be seen", nepali: "देखिनु" },
+      { verb: "잡다 (to catch)", stem: "잡", result: "잡히다", english: "to be caught", nepali: "समातिनु" },
+      { verb: "열다 (to open)", stem: "열", result: "열리다", english: "to be opened", nepali: "खुल्नु" },
+      { verb: "듣다 (to hear)", stem: "듣", result: "들리다", english: "to be heard", nepali: "सुनिनु" },
+      { verb: "끊다 (to cut)", stem: "끊", result: "끊기다", english: "to be cut", nepali: "काटिनु" },
+      { verb: "닫다 (to close)", stem: "닫", result: "닫히다", english: "to be closed", nepali: "बन्द हुनु" },
+      { verb: "잠그다 (to lock)", stem: "잠그", result: "잠기다", english: "to be locked", nepali: "ताल्चा लाग्नु" }
+    ]
+  },
+  examples: [
+    {
+      korean: "퇴근 시간이라서 길이 많이 막혔어요.",
+      english: "The road was congested because it was rush hour.",
+      nepali: "कार्यालय छुट्ने समय भएकोले बाटो धेरै जाम भयो।",
+      context: { english: "Traffic situation", nepali: "ट्राफिक अवस्था" }
+    },
+    {
+      korean: "모기한테 팔을 물렸어요.",
+      english: "I got bitten on the arm by a mosquito.",
+      nepali: "लामखुट्टेले हातमा टोक्यो।",
+      context: { english: "Being bitten", nepali: "टोकिएको" }
+    },
+    {
+      korean: "전화가 갑자기 끊겼어요.",
+      english: "The phone call suddenly got disconnected.",
+      nepali: "फोन अचानक काटियो।",
+      context: { english: "Phone disconnection", nepali: "फोन विच्छेद" }
+    },
+    {
+      korean: "방 안에서 산이 보여요.",
+      english: "Mountains are visible from inside the room.",
+      nepali: "कोठा भित्रबाट पहाड देखिन्छ।",
+      context: { english: "Scenic view", nepali: "दृश्य" }
+    },
+    {
+      korean: "기숙사 문이 잠겼어요.",
+      english: "The dormitory door got locked.",
+      nepali: "छात्रावासको ढोका ताल्चा लागियो।",
+      context: { english: "Door locked", nepali: "ढोका बन्द" }
     }
-  }
+  ]
 };
 
 // ============================================
@@ -580,200 +492,87 @@ export const grammar1 = {
 export const grammar2 = {
   id: 2,
   page: 76,
-  title: {
-    korean: '동-자고 하다',
-    english: 'Indirect Suggestion (let\'s do)',
-    nepali: 'अप्रत्यक्ष सुझाव (गरौं)'
+  pattern: "V + 자고 하다",
+  meaning: {
+    english: "Indirect suggestion - conveys 'let's do' from someone else",
+    nepali: "अप्रत्यक्ष सुझाव - अर्को व्यक्तिबाट 'गरौं' भनेको जनाउँछ"
   },
   description: {
-    korean: '다른 사람에게서 들은 권유나 제안 내용을 전달할 때 사용한다.',
-    english: 'Used when conveying a suggestion or proposal heard from someone else.',
-    nepali: 'अर्को व्यक्तिबाट सुनेको सुझाव वा प्रस्ताव जनाउँदा प्रयोग हुन्छ।'
+    english: "This pattern is used to report or convey a suggestion or proposal that was made by someone else. It's the indirect quotation form of '-자' (let's do).",
+    nepali: "यो ढाँचा अर्को व्यक्तिले गरेको सुझाव वा प्रस्ताव रिपोर्ट गर्न प्रयोग हुन्छ। यो '-자' (गरौं) को अप्रत्यक्ष उद्धरण रूप हो।"
   },
-  introExamples: [
-    {
-      speaker: '가',
-      korean: '아까 과장님이 뭐라고 하셨어요?',
-      english: 'What did the manager say earlier?',
-      nepali: 'अघि प्रबन्धकले के भन्नुभयो?'
-    },
-    {
-      speaker: '나',
-      korean: '내일 다시 회의하자고 하셨어요.',
-      english: 'They said let\'s have a meeting again tomorrow.',
-      nepali: 'भोलि फेरि बैठक गरौं भन्नुभयो।',
-      highlight: '회의하자고 하셨어요'
-    },
-    {
-      korean: '친구가 만나자고 해서 약속 장소에 나갔다.',
-      english: 'My friend suggested meeting, so I went to the meeting place.',
-      nepali: 'साथीले भेटौं भनेकोले भेट्ने ठाउँमा गएँ।',
-      highlight: '만나자고 해서'
-    },
-    {
-      korean: '아내가 같이 저녁을 먹자고 해서 기다리는 중이다.',
-      english: 'My wife suggested eating dinner together, so I\'m waiting.',
-      nepali: 'श्रीमतीले सँगै खाना खाऔं भनेकोले पर्खिरहेको छु।',
-      highlight: '먹자고 해서'
-    }
-  ],
-  dialogueExample: {
-    situation: {
-      korean: '후엔 씨와 고천 씨가 이사에 대해 이야기합니다.',
-      english: 'Huen and Gocheon talk about moving.',
-      nepali: 'हुएन र गोचोनले घर सर्ने बारेमा कुरा गर्छन्।'
-    },
-    conversation: [
+  whenToUse: {
+    situations: [
       {
-        speaker: '후엔',
-        korean: '고천 씨, 이사할 거예요?',
-        english: 'Gocheon, are you going to move?',
-        nepali: 'गोचोन, घर सर्ने हो?'
-      },
-      {
-        speaker: '고천',
-        korean: '네, 남편 직장이 너무 멀어요. 그래서 남편이 직장 근처로 이사 가자고 해요.',
-        english: 'Yes, my husband\'s workplace is too far. So my husband suggests we move near his workplace.',
-        nepali: 'हो, श्रीमानको कार्यालय धेरै टाढा छ। त्यसैले श्रीमानले कार्यालय नजिक सरौं भन्नुहुन्छ।',
-        highlight: '가자고 해요'
-      }
-    ]
-  },
-  conjugationTable: [
-    {
-      verb: '먹다 (to eat)',
-      stem: '먹',
-      result: '먹자고 하다',
-      english: 'suggests to eat',
-      nepali: 'खाऔं भन्छ'
-    },
-    {
-      verb: '가다 (to go)',
-      stem: '가',
-      result: '가자고 하다',
-      english: 'suggests to go',
-      nepali: 'जाऔं भन्छ'
-    },
-    {
-      verb: '하다 (to do)',
-      stem: '하',
-      result: '하자고 하다',
-      english: 'suggests to do',
-      nepali: 'गरौं भन्छ'
-    },
-    {
-      verb: '살다 (to live)',
-      stem: '살',
-      result: '살자고 하다',
-      english: 'suggests to live',
-      nepali: 'बसौं भन्छ'
-    }
-  ],
-  negativeForm: {
-    korean: '부정형은 \'-지 말자고 하다\'를 사용한다.',
-    english: 'For negative, use \'-지 말자고 하다\' (suggests not to do).',
-    nepali: 'नकारात्मकको लागि \'-지 말자고 하다\' (नगरौं भन्छ) प्रयोग गर्नुहोस्।',
-    example: {
-      korean: '친구가 오늘은 술을 마시지 말자고 했어요.',
-      english: 'My friend suggested not drinking alcohol today.',
-      nepali: 'साथीले आज रक्सी नपिऔं भन्यो।'
-    }
-  },
-  practiceSection: {
-    instruction: {
-      korean: '그림을 보고 보기와 같이 친구와 이야기해 보세요.',
-      english: 'Look at the pictures and talk with friends as shown in the example.',
-      nepali: 'तस्विरहरू हेर्नुहोस् र उदाहरण जस्तै साथीसँग कुरा गर्नुहोस्।'
-    },
-    example: {
-      question: {
-        korean: '이번 달 우리 반 모임 때 친구들은 뭘 하자고 했어요?',
-        english: 'What did friends suggest doing at this month\'s class gathering?',
-        nepali: 'यस महिनाको कक्षा भेलामा साथीहरूले के गरौं भने?'
-      },
-      context: {
-        korean: '다 같이 노래방에 가요.',
-        english: 'Let\'s all go to karaoke.',
-        nepali: 'सबैजना कराओकेमा जाऔं।'
-      },
-      answer: {
-        speaker: '라호만',
-        korean: '라호만 씨는 다 같이 노래방에 가자고 했어요.',
-        english: 'Rahman suggested everyone go to karaoke together.',
-        nepali: 'रहमानले सबैजना कराओकेमा जाऔं भने।'
-      }
-    },
-    exercises: [
-      {
-        id: 1,
-        person: '안젤라',
-        suggestion: {
-          korean: '재미있는 영화를 봐요.',
-          english: 'Let\'s watch an interesting movie.',
-          nepali: 'रमाइलो चलचित्र हेरौं।'
+        situation: {
+          english: "Reporting what someone suggested doing together",
+          nepali: "कसैले सँगै गरौं भनेको कुरा भन्दा"
         },
-        answer: {
-          korean: '안젤라 씨는 재미있는 영화를 보자고 했어요.',
-          english: 'Angela suggested watching an interesting movie.',
-          nepali: 'एन्जेलाले रमाइलो चलचित्र हेरौं भनिन्।'
+        example: {
+          korean: "친구가 만나자고 해서 약속 장소에 나갔다.",
+          english: "My friend suggested meeting, so I went to the meeting place.",
+          nepali: "साथीले भेटौं भनेकोले भेट्ने ठाउँमा गएँ।"
         }
       },
       {
-        id: 2,
-        person: '아나이스',
-        suggestion: {
-          korean: '공원에서 산책하고 놀아요.',
-          english: 'Let\'s take a walk and have fun in the park.',
-          nepali: 'पार्कमा घुम्न र खेल्न जाऔं।'
+        situation: {
+          english: "Conveying someone's proposal to another person",
+          nepali: "कसैको प्रस्ताव अर्को व्यक्तिलाई भन्दा"
         },
-        answer: {
-          korean: '아나이스 씨는 공원에서 산책하고 놀자고 했어요.',
-          english: 'Anais suggested taking a walk and having fun in the park.',
-          nepali: 'अनाइसले पार्कमा घुम्न र खेलौं भनिन्।'
-        }
-      },
-      {
-        id: 3,
-        person: '라민',
-        suggestion: {
-          korean: '맛집에 가서 맛있는 음식을 먹어요.',
-          english: 'Let\'s go to a famous restaurant and eat delicious food.',
-          nepali: 'प्रसिद्ध रेस्टुरेन्टमा गएर स्वादिष्ट खाना खाऔं।'
-        },
-        answer: {
-          korean: '라민 씨는 맛집에 가서 맛있는 음식을 먹자고 했어요.',
-          english: 'Ramin suggested going to a famous restaurant and eating delicious food.',
-          nepali: 'रामिनले प्रसिद्ध रेस्टुरेन्टमा गएर स्वादिष्ट खाना खाऔं भने।'
+        example: {
+          korean: "남편이 직장 근처로 이사 가자고 해요.",
+          english: "My husband suggests we move near his workplace.",
+          nepali: "श्रीमानले कार्यालय नजिक सरौं भन्नुहुन्छ।"
         }
       }
     ]
   },
-  speakingActivity: {
-    instruction: {
-      korean: '우리 반 모임에서 하고 싶은 것에 대해 이야기해 보세요. 그리고 들은 이야기를 다른 친구에게 전달하세요.',
-      english: 'Talk about what you want to do at the class gathering. Then convey what you heard to another friend.',
-      nepali: 'कक्षा भेलामा के गर्न चाहनुहुन्छ भनी कुरा गर्नुहोस्। अनि सुनेको कुरा अर्को साथीलाई भन्नुहोस्।'
+  formation: {
+    rule: "Verb stem + 자고 하다",
+    notes: {
+      english: "Remove 다 from the verb and add 자고 하다. For negative: Verb stem + 지 말자고 하다 (suggests not to do).",
+      nepali: "क्रियाबाट 다 हटाएर 자고 하다 थप्नुहोस्। नकारात्मकको लागि: क्रिया मूल + 지 말자고 하다 (नगरौं भन्छ)।"
     },
-    example: {
-      speaker1: {
-        name: '잠시드',
-        korean: '같이 한국 음식을 만들어요.',
-        english: 'Let\'s make Korean food together.',
-        nepali: 'सँगै कोरियाली खाना बनाऔं।'
-      },
-      speaker2: {
-        name: '이 씨',
-        korean: '가족이나 고향 친구들도 초대해요.',
-        english: 'Let\'s invite family or hometown friends too.',
-        nepali: 'परिवार वा गाउँका साथीहरूलाई पनि बोलाऔं।'
-      },
-      report: {
-        korean: '잠시드 씨는 같이 한국 음식을 만들자고 해요.',
-        english: 'Jamshid suggests making Korean food together.',
-        nepali: 'जाम्सिदले सँगै कोरियाली खाना बनाऔं भन्छ।'
-      }
+    conjugationTable: [
+      { verb: "먹다 (to eat)", stem: "먹", result: "먹자고 하다", english: "suggests to eat", nepali: "खाऔं भन्छ" },
+      { verb: "가다 (to go)", stem: "가", result: "가자고 하다", english: "suggests to go", nepali: "जाऔं भन्छ" },
+      { verb: "하다 (to do)", stem: "하", result: "하자고 하다", english: "suggests to do", nepali: "गरौं भन्छ" },
+      { verb: "살다 (to live)", stem: "살", result: "살자고 하다", english: "suggests to live", nepali: "बसौं भन्छ" },
+      { verb: "만나다 (to meet)", stem: "만나", result: "만나자고 하다", english: "suggests to meet", nepali: "भेटौं भन्छ" }
+    ]
+  },
+  examples: [
+    {
+      korean: "과장님이 내일 다시 회의하자고 하셨어요.",
+      english: "The manager said let's have a meeting again tomorrow.",
+      nepali: "प्रबन्धकले भोलि फेरि बैठक गरौं भन्नुभयो।",
+      context: { english: "Work meeting", nepali: "कार्यालय बैठक" }
+    },
+    {
+      korean: "친구가 만나자고 해서 약속 장소에 나갔다.",
+      english: "My friend suggested meeting, so I went to the meeting place.",
+      nepali: "साथीले भेटौं भनेकोले भेट्ने ठाउँमा गएँ।",
+      context: { english: "Meeting friend", nepali: "साथी भेट्ने" }
+    },
+    {
+      korean: "아내가 같이 저녁을 먹자고 해서 기다리는 중이다.",
+      english: "My wife suggested eating dinner together, so I'm waiting.",
+      nepali: "श्रीमतीले सँगै खाना खाऔं भनेकोले पर्खिरहेको छु।",
+      context: { english: "Dinner plan", nepali: "खाना योजना" }
+    },
+    {
+      korean: "남편이 직장 근처로 이사 가자고 해요.",
+      english: "My husband suggests we move near his workplace.",
+      nepali: "श्रीमानले कार्यालय नजिक सरौं भन्नुहुन्छ।",
+      context: { english: "Moving suggestion", nepali: "सर्ने सुझाव" }
+    },
+    {
+      korean: "친구가 오늘은 술을 마시지 말자고 했어요.",
+      english: "My friend suggested not drinking alcohol today.",
+      nepali: "साथीले आज रक्सी नपिऔं भन्यो।",
+      context: { english: "Negative suggestion", nepali: "नकारात्मक सुझाव" }
     }
-  }
+  ]
 };
 
 // ============================================
@@ -788,15 +587,16 @@ export const speaking = {
     nepali: 'बोल्ने'
   },
   mainDialogue: {
+    id: 1,
     title: {
+      korean: '동네 시설 소개',
+      english: 'Introducing Neighborhood Facilities',
+      nepali: 'छिमेकको सुविधा परिचय'
+    },
+    situation: {
       korean: '후엔 씨가 이사 온 사람에게 주변 시설과 환경에 대해 알려 줍니다.',
       english: 'Huen tells a person who just moved in about the surrounding facilities and environment.',
       nepali: 'हुएनले भर्खर सरेर आएको व्यक्तिलाई वरपरको सुविधा र वातावरणको बारेमा बताउँछिन्।'
-    },
-    instruction: {
-      korean: '다음 대화처럼 이야기해 보세요.',
-      english: 'Try talking like the following conversation.',
-      nepali: 'निम्न कुराकानी जस्तै कुरा गर्नुहोस्।'
     },
     conversation: [
       {
@@ -926,6 +726,7 @@ export const vocabulary = [
   {
     id: 19,
     page: 75,
+    category: 'Grammar',
     section: 'Grammar1',
     korean: '막히다',
     pronunciation: 'makhida',
@@ -941,6 +742,7 @@ export const vocabulary = [
   {
     id: 20,
     page: 75,
+    category: 'Grammar',
     section: 'Grammar1',
     korean: '물리다',
     pronunciation: 'mullida',
@@ -956,6 +758,7 @@ export const vocabulary = [
   {
     id: 21,
     page: 75,
+    category: 'Grammar',
     section: 'Grammar1',
     korean: '끊기다',
     pronunciation: 'kkeunkida',
@@ -971,6 +774,7 @@ export const vocabulary = [
   {
     id: 22,
     page: 75,
+    category: 'Grammar',
     section: 'Grammar1',
     korean: '보이다',
     pronunciation: 'boida',
@@ -986,6 +790,7 @@ export const vocabulary = [
   {
     id: 23,
     page: 75,
+    category: 'Grammar',
     section: 'Grammar1',
     korean: '들리다',
     pronunciation: 'deullida',
@@ -1001,6 +806,7 @@ export const vocabulary = [
   {
     id: 24,
     page: 75,
+    category: 'Grammar',
     section: 'Grammar1',
     korean: '열리다',
     pronunciation: 'yeollida',
@@ -1016,6 +822,7 @@ export const vocabulary = [
   {
     id: 25,
     page: 75,
+    category: 'Grammar',
     section: 'Grammar1',
     korean: '닫히다',
     pronunciation: 'dathida',
@@ -1031,6 +838,7 @@ export const vocabulary = [
   {
     id: 26,
     page: 75,
+    category: 'Grammar',
     section: 'Grammar1',
     korean: '잠기다',
     pronunciation: 'jamgida',
@@ -1046,6 +854,7 @@ export const vocabulary = [
   {
     id: 27,
     page: 77,
+    category: 'Speaking',
     section: 'Speaking',
     korean: '놀이터',
     pronunciation: 'noriter',
@@ -1061,6 +870,7 @@ export const vocabulary = [
   {
     id: 28,
     page: 77,
+    category: 'Speaking',
     section: 'Speaking',
     korean: '체육 센터',
     pronunciation: 'cheyuk senteo',
@@ -1076,6 +886,7 @@ export const vocabulary = [
   {
     id: 29,
     page: 77,
+    category: 'Speaking',
     section: 'Speaking',
     korean: '동네',
     pronunciation: 'dongne',
@@ -1091,6 +902,7 @@ export const vocabulary = [
   {
     id: 30,
     page: 77,
+    category: 'Speaking',
     section: 'Speaking',
     korean: '이웃',
     pronunciation: 'iut',
@@ -1106,6 +918,7 @@ export const vocabulary = [
   {
     id: 31,
     page: 77,
+    category: 'Speaking',
     section: 'Speaking',
     korean: '이사 오다',
     pronunciation: 'isa oda',
@@ -1121,6 +934,7 @@ export const vocabulary = [
   {
     id: 32,
     page: 77,
+    category: 'Speaking',
     section: 'Speaking',
     korean: '여쭤보다',
     pronunciation: 'yeojwoboda',
@@ -2856,6 +2670,35 @@ export const workbookGrammar4 = {
 };
 
 // ============================================
+// Create readingPassages array for App.jsx compatibility
+// ============================================
+
+export const readingPassages = [
+  {
+    id: 1,
+    title: readingPassage.passage.title,
+    content: readingPassage.passage.content,
+    keyPoints: [
+      {
+        korean: '글쓴이의 고향은 사마르칸트로, 실크 로드의 역사를 간직하고 있습니다.',
+        english: 'The writer\'s hometown is Samarkand, which preserves the history of the Silk Road.',
+        nepali: 'लेखकको गृहनगर समरकन्द हो, जसले सिल्क रोडको इतिहास संरक्षण गरेको छ।'
+      },
+      {
+        korean: '건조한 날씨 때문에 고향에는 나무가 많지 않습니다.',
+        english: 'Because of dry weather, there are not many trees in the hometown.',
+        nepali: 'सुक्खा मौसमको कारण गृहनगरमा धेरै रूखहरू छैनन्।'
+      },
+      {
+        korean: '한국의 산은 계절마다 색깔이 바뀌어서 좋습니다.',
+        english: 'Korean mountains are nice because the colors change with each season.',
+        nepali: 'कोरियाको पहाडहरू राम्रा छन् किनभने हरेक मौसममा रङ्ग फेरिन्छ।'
+      }
+    ]
+  }
+];
+
+// ============================================
 // Export all sections for the chapter
 // ============================================
 
@@ -2875,6 +2718,7 @@ export default {
   listening,
   reading,
   readingPassage,
+  readingPassages,
   writing,
   cultureAndInfo,
   vocabularyChecklist,
