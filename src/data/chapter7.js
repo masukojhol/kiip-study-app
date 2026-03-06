@@ -786,14 +786,7 @@ export const speaking = {
   }
 };
 
-// Create dialogues array for App.jsx compatibility
-export const dialogues = [speaking.mainDialogue];
-
-// ============================================
-// Grammar array for compatibility
-// ============================================
-
-export const grammar = [grammar1];
+// NOTE: dialogues and grammar arrays are defined after grammar2 to include all content
 
 // ============================================
 // Practice Exercises
@@ -1649,10 +1642,12 @@ export const readingPassages = [
   }
 ];
 
-// Grammar patterns array (both grammars already exported individually above)
-export const grammarPatterns = [grammar1, grammar2];
+// Named exports for App.jsx compatibility (must be after grammar2 and performanceDialogue are defined)
+export const grammar = [grammar1, grammar2];
+export const dialogues = [speaking.mainDialogue, performanceDialogue];
 
-// All dialogues array
+// Alternative arrays for reference
+export const grammarPatterns = [grammar1, grammar2];
 export const allDialogues = [speaking.mainDialogue, performanceDialogue];
 
 // ============================================
