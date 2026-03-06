@@ -801,89 +801,71 @@ export const grammar = [grammar1];
 
 export const practiceExercises = [
   {
-    id: 1,
     type: 'fill-in-blank',
-    title: {
-      korean: '알맞은 표현을 넣으세요',
-      english: 'Fill in the correct expression',
-      nepali: 'सही अभिव्यक्ति भर्नुहोस्'
+    instruction: {
+      korean: '빈칸에 알맞은 표현을 넣으세요.',
+      english: 'Fill in the blanks with the correct expression.',
+      nepali: 'खाली ठाउँमा सही अभिव्यक्ति भर्नुहोस्।'
     },
     questions: [
       {
-        sentence: {
-          korean: '선생님이 숙제를 _____ 했어요.',
-          english: 'The teacher told (us) to do homework.',
-          nepali: 'शिक्षकले गृहकार्य गर्नू भन्नुभयो।'
-        },
-        answer: '하라고',
-        options: ['하라고', '한다고', '하자고', '하냐고']
+        question: '선생님이 숙제를 _____ 했어요. (told to do)',
+        nepaliQuestion: 'शिक्षकले गृहकार्य गर्नू भन्नुभयो।',
+        hint: '하라고/한다고/하자고/하냐고',
+        answer: '하라고'
       },
       {
-        sentence: {
-          korean: '친구가 어디에 _____ 했어요.',
-          english: 'My friend asked where (I) was going.',
-          nepali: 'साथीले कहाँ जान्छु भनेर सोध्यो।'
-        },
-        answer: '가냐고',
-        options: ['가라고', '간다고', '가자고', '가냐고']
+        question: '친구가 어디에 _____ 했어요. (asked where going)',
+        nepaliQuestion: 'साथीले कहाँ जान्छु भनेर सोध्यो।',
+        hint: '가라고/간다고/가자고/가냐고',
+        answer: '가냐고'
       },
       {
-        sentence: {
-          korean: '엄마가 밥을 빨리 _____ 했어요.',
-          english: 'Mom told me to eat quickly.',
-          nepali: 'आमाले चाँडो खानू भन्नुभयो।'
-        },
-        answer: '먹으라고',
-        options: ['먹는다고', '먹으라고', '먹냐고', '먹자고']
+        question: '엄마가 밥을 빨리 _____ 했어요. (told to eat)',
+        nepaliQuestion: 'आमाले चाँडो खानू भन्नुभयो।',
+        hint: '먹는다고/먹으라고/먹냐고/먹자고',
+        answer: '먹으라고'
+      },
+      {
+        question: '이 영화가 기대_____ 재미있었어요. (as much as)',
+        nepaliQuestion: 'यो फिल्म अपेक्षा जत्तिकै रमाइलो थियो।',
+        hint: '만큼/처럼',
+        answer: '만큼'
+      },
+      {
+        question: '가수_____ 노래를 잘해요. (as good as)',
+        nepaliQuestion: 'गायक जत्तिकै राम्रो गाउँछ।',
+        hint: '만큼/보다',
+        answer: '만큼'
       }
     ]
   },
   {
-    id: 2,
-    type: 'matching',
-    title: {
-      korean: '공연 종류와 설명을 연결하세요',
-      english: 'Match the performance type with its description',
-      nepali: 'प्रदर्शनको प्रकार र विवरण मिलाउनुहोस्'
+    type: 'fill-in-blank',
+    instruction: {
+      korean: '간접 인용으로 바꿔서 빈칸을 채우세요.',
+      english: 'Change to indirect quotation and fill in the blank.',
+      nepali: 'अप्रत्यक्ष उद्धरणमा परिवर्तन गरेर खाली ठाउँ भर्नुहोस्।'
     },
-    pairs: [
+    questions: [
       {
-        item: '뮤지컬',
-        match: '노래와 춤이 있는 공연',
-        english: 'Performance with songs and dance'
+        question: '안내 방송: "휴대 전화를 끄세요." → 안내 방송에서 휴대 전화를 _____ 했어요.',
+        nepaliQuestion: 'घोषणा: "मोबाइल फोन बन्द गर्नुहोस्।" → घोषणाले मोबाइल फोन बन्द गर्नू भन्यो।',
+        hint: '끄라고/끈다고',
+        answer: '끄라고'
       },
       {
-        item: '연극',
-        match: '대사로 이야기를 하는 공연',
-        english: 'Performance where a story is told through dialogue'
+        question: '친구: "공연이 몇 시에 시작해요?" → 친구가 공연이 몇 시에 _____ 했어요.',
+        nepaliQuestion: 'साथी: "प्रदर्शन कति बजे सुरु हुन्छ?" → साथीले प्रदर्शन कति बजे सुरु हुन्छ भनेर सोध्यो।',
+        hint: '시작하냐고/시작하라고',
+        answer: '시작하냐고'
       },
       {
-        item: '난타',
-        match: '요리하면서 타악기를 치는 공연',
-        english: 'Performance playing percussion while cooking'
-      },
-      {
-        item: '사물놀이',
-        match: '한국 전통 타악기 연주',
-        english: 'Traditional Korean percussion performance'
+        question: '과장님: "내일 회의에 모두 참석하세요." → 과장님이 내일 회의에 모두 _____ 했어요.',
+        nepaliQuestion: 'म्यानेजर: "भोलिको बैठकमा सबै सहभागी हुनुहोस्।" → म्यानेजरले भोलिको बैठकमा सबैलाई सहभागी हुनू भन्नुभयो।',
+        hint: '참석하라고/참석하냐고',
+        answer: '참석하라고'
       }
-    ]
-  },
-  {
-    id: 3,
-    type: 'ordering',
-    title: {
-      korean: '공연 관람 순서를 맞추세요',
-      english: 'Put the performance viewing steps in order',
-      nepali: 'प्रदर्शन हेर्ने क्रम मिलाउनुहोस्'
-    },
-    correctOrder: [
-      '공연 정보를 검색하다',
-      '표를 예매하다',
-      '티켓을 수령하다',
-      '좌석을 찾다',
-      '공연을 관람하다',
-      '감상 소감을 말하다'
     ]
   }
 ];
