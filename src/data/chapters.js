@@ -7,6 +7,7 @@ import * as chapter6 from './chapter6';
 import * as chapter7 from './chapter7';
 import * as chapter9 from './chapter9';
 import * as chapter10 from './chapter10';
+import * as chapter11 from './chapter11';
 
 export const chapters = {
   4: {
@@ -33,6 +34,10 @@ export const chapters = {
     id: 10,
     ...chapter10
   },
+  11: {
+    id: 11,
+    ...chapter11
+  },
 };
 
 // List of available chapter numbers for navigation
@@ -50,4 +55,5 @@ export const chapterTitles = {
   8: { korean: '대중교통 이용', english: 'Using Public Transportation', nepali: 'सार्वजनिक यातायात प्रयोग' },
   9: { korean: '고장과 수리', english: 'Breakdown and Repair', nepali: 'बिग्रिएको र मर्मत' },
   10: { korean: '취업', english: 'Getting a Job', nepali: 'रोजगारी पाउने' },
+  11: { korean: '부동산', english: 'Real Estate', nepali: 'घरजग्गा' },
 };
