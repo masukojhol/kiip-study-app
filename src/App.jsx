@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import VocabularyCard from './components/VocabularyCard';
 import GrammarSection from './components/GrammarSection';
 import DialogueSection from './components/DialogueSection';
@@ -89,8 +89,6 @@ function App() {
 
         {/* Search Bar */}
         <SearchBar
-          vocabulary={vocabulary}
-          grammar={grammar}
           allChapters={chapters}
           onResultClick={handleSearchResultClick}
         />

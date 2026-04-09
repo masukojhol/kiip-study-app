@@ -903,13 +903,178 @@ export const contractVocabulary = [
   }
 ];
 
+// Section 6: Additional vocabulary (추가 어휘)
+export const additionalVocabulary = [
+  {
+    id: 53,
+    page: 144,
+    category: 'Transportation',
+    section: '추가 어휘',
+    korean: '주차할 곳이 있다/없다',
+    pronunciation: 'juchahal gosi itda/eopda',
+    english: 'There is/isn\'t a place to park',
+    nepali: 'पार्किङ गर्ने ठाउँ छ/छैन',
+    type: 'expression',
+    example: {
+      korean: '이 아파트는 주차할 곳이 없어서 불편해요.',
+      english: 'This apartment is inconvenient because there\'s no place to park.',
+      nepali: 'यो अपार्टमेन्टमा पार्किङ गर्ने ठाउँ छैन त्यसैले असुविधाजनक छ।'
+    }
+  },
+  {
+    id: 54,
+    page: 144,
+    category: 'Transportation',
+    section: '추가 어휘',
+    korean: '고속도로',
+    pronunciation: 'gosokdoro',
+    english: 'Highway / Expressway',
+    nepali: 'राजमार्ग / द्रुतमार्ग',
+    type: 'noun',
+    example: {
+      korean: '집 근처에 고속도로가 있어서 시끄러워요.',
+      english: 'It\'s noisy because there\'s a highway near the house.',
+      nepali: 'घर नजिक राजमार्ग छ त्यसैले ठूलो आवाज आउँछ।'
+    }
+  },
+  {
+    id: 55,
+    page: 144,
+    category: 'Environment',
+    section: '추가 어휘',
+    korean: '시장',
+    pronunciation: 'sijang',
+    english: 'Market',
+    nepali: 'बजार',
+    type: 'noun',
+    example: {
+      korean: '집 근처에 시장이 있어서 편해요.',
+      english: 'It\'s convenient because there\'s a market near the house.',
+      nepali: 'घर नजिक बजार छ त्यसैले सुविधाजनक छ।'
+    }
+  },
+  {
+    id: 56,
+    page: 144,
+    category: 'Environment',
+    section: '추가 어휘',
+    korean: '쇼핑몰',
+    pronunciation: 'syopingmol',
+    english: 'Shopping mall',
+    nepali: 'शपिङ मल',
+    type: 'noun',
+    example: {
+      korean: '쇼핑몰이 가까워서 좋아요.',
+      english: 'It\'s nice that the shopping mall is close.',
+      nepali: 'शपिङ मल नजिक भएकोले राम्रो छ।'
+    }
+  },
+  {
+    id: 57,
+    page: 144,
+    category: 'Environment',
+    section: '추가 어휘',
+    korean: '교육 환경이 좋다/나쁘다',
+    pronunciation: 'gyoyuk hwangyeongi jota/nappuda',
+    english: 'Educational environment is good/bad',
+    nepali: 'शैक्षिक वातावरण राम्रो/नराम्रो छ',
+    type: 'expression',
+    example: {
+      korean: '학교가 가까워서 교육 환경이 좋아요.',
+      english: 'The educational environment is good because the school is close.',
+      nepali: 'विद्यालय नजिक भएकोले शैक्षिक वातावरण राम्रो छ।'
+    }
+  },
+  {
+    id: 58,
+    page: 153,
+    category: 'Contract',
+    section: '추가 어휘',
+    korean: '전입신고',
+    pronunciation: 'jeonipshingo',
+    english: 'Move-in report / Residence registration',
+    nepali: 'बसाइँ सराइँ प्रतिवेदन',
+    type: 'noun',
+    example: {
+      korean: '이사한 후에 전입신고를 해야 해요.',
+      english: 'You need to file a move-in report after moving.',
+      nepali: 'सरेपछि बसाइँ सराइँ प्रतिवेदन गर्नुपर्छ।'
+    }
+  },
+  {
+    id: 59,
+    page: 153,
+    category: 'Contract',
+    section: '추가 어휘',
+    korean: '부동산 중개소',
+    pronunciation: 'budongsan junggaeso',
+    english: 'Real estate agency',
+    nepali: 'घरजग्गा एजेन्सी',
+    type: 'noun',
+    example: {
+      korean: '부동산 중개소에서 집을 소개받았어요.',
+      english: 'I was introduced to a house at the real estate agency.',
+      nepali: 'घरजग्गा एजेन्सीमा घरको जानकारी पाएँ।'
+    }
+  },
+  {
+    id: 60,
+    page: 144,
+    category: 'Actions',
+    section: '추가 어휘',
+    korean: '집을 구하다',
+    pronunciation: 'jibeul guhada',
+    english: 'To look for a house',
+    nepali: 'घर खोज्नु',
+    type: 'verb',
+    example: {
+      korean: '서울에서 집을 구하고 있어요.',
+      english: 'I\'m looking for a house in Seoul.',
+      nepali: 'सियोलमा घर खोज्दैछु।'
+    }
+  },
+  {
+    id: 61,
+    page: 144,
+    category: 'Actions',
+    section: '추가 어휘',
+    korean: '집을 계약하다',
+    pronunciation: 'jibeul gyeyakhada',
+    english: 'To sign a housing contract',
+    nepali: 'घरको सम्झौता गर्नु',
+    type: 'verb',
+    example: {
+      korean: '드디어 마음에 드는 집을 계약했어요.',
+      english: 'I finally signed a contract for a house I liked.',
+      nepali: 'अन्ततः मनपर्ने घरको सम्झौता गरेँ।'
+    }
+  },
+  {
+    id: 62,
+    page: 144,
+    category: 'Actions',
+    section: '추가 어휘',
+    korean: '이사하다',
+    pronunciation: 'isahada',
+    english: 'To move (houses)',
+    nepali: 'घर सर्नु',
+    type: 'verb',
+    example: {
+      korean: '다음 달에 새 집으로 이사해요.',
+      english: 'I\'m moving to a new house next month.',
+      nepali: 'अर्को महिना नयाँ घरमा सर्छु।'
+    }
+  }
+];
+
 // Combine all vocabulary
 export const allVocabulary = [
   ...housingTypeVocabulary,
   ...rentalSystemVocabulary,
   ...transportEnvironmentVocabulary,
   ...interiorVocabulary,
-  ...contractVocabulary
+  ...contractVocabulary,
+  ...additionalVocabulary
 ];
 
 // ============================================
@@ -1148,55 +1313,51 @@ export const conversations = [
       english: 'Ramin is looking for a house at the real estate agency.',
       nepali: 'रामिन घरजग्गा एजेन्सीमा घर खोज्दै छन्।'
     },
-    speakers: [
-      { id: 'A', name: '라민', role: 'Customer' },
-      { id: 'B', name: '부동산 직원', role: 'Real estate agent' }
-    ],
-    dialogue: [
+    conversation: [
       {
-        speaker: 'A',
+        speaker: '라민',
         korean: '방 두 개짜리 빌라를 찾고 있는데요. 월세로요.',
         english: 'I\'m looking for a two-room villa. For monthly rent.',
         nepali: 'म दुई कोठा भएको भिला खोज्दैछु। मासिक भाडामा।'
       },
       {
-        speaker: 'B',
+        speaker: '부동산 직원',
         korean: '네, 이 근처에 괜찮은 빌라가 있어요. 남향이라서 햇빛이 잘 들어요.',
         english: 'Yes, there\'s a nice villa nearby. It faces south, so sunlight comes in well.',
         nepali: 'हजुर, यहाँ नजिकै राम्रो भिला छ। दक्षिणमुखी भएकोले घामको किरण राम्रोसँग आउँछ।'
       },
       {
-        speaker: 'A',
+        speaker: '라민',
         korean: '월세는 얼마예요?',
         english: 'How much is the monthly rent?',
         nepali: 'मासिक भाडा कति हो?'
       },
       {
-        speaker: 'B',
+        speaker: '부동산 직원',
         korean: '보증금 1천만 원에 월세 50만 원이에요. 신축인 데다가 깨끗해요.',
         english: 'It\'s a 10 million won deposit with 500,000 won monthly rent. It\'s newly built and clean.',
         nepali: 'धरौटी एक करोड वन र मासिक भाडा पाँच लाख वन हो। नयाँ निर्मित र सफा छ।'
       },
       {
-        speaker: 'A',
+        speaker: '라민',
         korean: '지하철역에서 가까워요?',
         english: 'Is it close to the subway station?',
         nepali: 'मेट्रो स्टेशनबाट नजिक छ?'
       },
       {
-        speaker: 'B',
+        speaker: '부동산 직원',
         korean: '네, 걸어서 5분 거리예요. 버스 정류장도 가까운 데다가 마트도 있어요.',
         english: 'Yes, it\'s a 5-minute walk. The bus stop is also close, and there\'s a mart too.',
         nepali: 'हजुर, हिँडेर पाँच मिनेटको दूरी हो। बस स्टप पनि नजिक छ र सुपरमार्केट पनि छ।'
       },
       {
-        speaker: 'A',
+        speaker: '라민',
         korean: '좋네요. 한번 볼 수 있을까요?',
         english: 'That sounds good. Can I take a look?',
         nepali: 'राम्रो लाग्यो। एक पटक हेर्न सक्छु?'
       },
       {
-        speaker: 'B',
+        speaker: '부동산 직원',
         korean: '그럼요. 지금 바로 가실 수 있어요.',
         english: 'Of course. You can go right now.',
         nepali: 'अवश्य। अहिले नै जान सक्नुहुन्छ।'
@@ -1236,49 +1397,45 @@ export const conversations = [
       english: 'Houen is looking for a jeonse apartment near the learning center.',
       nepali: 'होवेन शिक्षण केन्द्र नजिकै जोन्से अपार्टमेन्ट खोज्दै छन्।'
     },
-    speakers: [
-      { id: 'A', name: '호웬', role: 'Customer' },
-      { id: 'B', name: '부동산 직원', role: 'Real estate agent' }
-    ],
-    dialogue: [
+    conversation: [
       {
-        speaker: 'A',
+        speaker: '호웬',
         korean: '학습관 근처에 방 두 개짜리 아파트를 찾고 있어요. 전세로요.',
         english: 'I\'m looking for a two-room apartment near the learning center. On jeonse.',
         nepali: 'म शिक्षण केन्द्र नजिकै दुई कोठा भएको अपार्टमेन्ट खोज्दैछु। जोन्सेमा।'
       },
       {
-        speaker: 'B',
+        speaker: '부동산 직원',
         korean: '두 군데가 있어요. 하나는 역세권인 데다가 마트도 가까워요.',
         english: 'There are two options. One is in the station area and also close to a mart.',
         nepali: 'दुईवटा छन्। एउटा स्टेशन क्षेत्रमा छ र सुपरमार्केट पनि नजिक छ।'
       },
       {
-        speaker: 'A',
+        speaker: '호웬',
         korean: '다른 하나는요?',
         english: 'What about the other one?',
         nepali: 'अर्को कस्तो छ?'
       },
       {
-        speaker: 'B',
+        speaker: '부동산 직원',
         korean: '역에서 좀 멀지만 전망이 좋은 데다가 조용해요.',
         english: 'It\'s a bit far from the station, but it has a good view and is quiet.',
         nepali: 'स्टेशनबाट अलि टाढा छ, तर दृश्य राम्रो छ र शान्त छ।'
       },
       {
-        speaker: 'A',
+        speaker: '호웬',
         korean: '전세금은 얼마예요?',
         english: 'How much is the jeonse deposit?',
         nepali: 'जोन्से धरौटी कति हो?'
       },
       {
-        speaker: 'B',
+        speaker: '부동산 직원',
         korean: '역 근처는 2억이고, 조용한 곳은 1억 8천이에요.',
         english: 'The one near the station is 200 million, and the quiet one is 180 million.',
         nepali: 'स्टेशन नजिकको दुई अर्ब हो, र शान्त ठाउँको एक अर्ब अस्सी करोड हो।'
       },
       {
-        speaker: 'A',
+        speaker: '호웬',
         korean: '둘 다 한번 보고 싶어요.',
         english: 'I\'d like to see both of them.',
         nepali: 'दुवै हेर्न चाहन्छु।'
@@ -1330,7 +1487,9 @@ export const pronunciation = {
       examples: [
         { written: '업무', pronounced: '[엄무]', english: 'work/duties' },
         { written: '입문', pronounced: '[임문]', english: 'introduction' },
-        { written: '밥물', pronounced: '[밤물]', english: 'rice water' }
+        { written: '밥물', pronounced: '[밤물]', english: 'rice water' },
+        { written: '값만', pronounced: '[감만]', english: 'only the price' },
+        { written: '월급날', pronounced: '[월금날]', english: 'payday' }
       ]
     },
     {
@@ -1339,7 +1498,9 @@ export const pronunciation = {
       examples: [
         { written: '걷는', pronounced: '[건는]', english: 'walking' },
         { written: '믿는', pronounced: '[민는]', english: 'believing' },
-        { written: '닫는', pronounced: '[단는]', english: 'closing' }
+        { written: '닫는', pronounced: '[단는]', english: 'closing' },
+        { written: '콧물', pronounced: '[콘물]', english: 'runny nose' },
+        { written: '있는데', pronounced: '[인는데]', english: 'there is, but...' }
       ]
     },
     {
@@ -1348,7 +1509,9 @@ export const pronunciation = {
       examples: [
         { written: '식물', pronounced: '[싱물]', english: 'plant' },
         { written: '국물', pronounced: '[궁물]', english: 'broth' },
-        { written: '학년', pronounced: '[항년]', english: 'school year' }
+        { written: '학년', pronounced: '[항년]', english: 'school year' },
+        { written: '악마', pronounced: '[앙마]', english: 'devil' },
+        { written: '한국말', pronounced: '[한궁말]', english: 'Korean language' }
       ]
     }
   ],
@@ -1770,6 +1933,16 @@ export const quizQuestions = [
   }
 ];
 
+// ============================================
+// Combined exports for App.jsx compatibility
+// ============================================
+
+export const vocabulary = allVocabulary;
+export const grammar = grammarPoints;
+export const dialogues = conversations;
+export const readingPassages = readings;
+export const practiceExercises = quizQuestions;
+
 // Export all content
 export default {
   chapterInfo,
@@ -1778,11 +1951,17 @@ export default {
   transportEnvironmentVocabulary,
   interiorVocabulary,
   contractVocabulary,
+  additionalVocabulary,
   allVocabulary,
+  vocabulary,
   grammarPoints,
+  grammar,
   conversations,
+  dialogues,
   pronunciation,
   readings,
+  readingPassages,
   culture,
-  quizQuestions
+  quizQuestions,
+  practiceExercises
 };

@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 
-function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
+function SearchBar({ onResultClick, allChapters }) {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const searchRef = useRef(null);
 
@@ -17,26 +16,22 @@ function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Search across all chapters
-  useEffect(() => {
+  // Search across all chapters using useMemo instead of useEffect + setState
+  const results = useMemo(() => {
     if (!query || query.trim().length < 2) {
-      setResults([]);
-      return;
+      return [];
     }
 
     const searchQuery = query.toLowerCase().trim();
     const foundResults = [];
 
-    // Ensure allChapters exists
     if (!allChapters || typeof allChapters !== 'object') {
-      return;
+      return [];
     }
 
-    // Search in all chapters
     Object.entries(allChapters).forEach(([chapterNum, chapterData]) => {
       if (!chapterData) return;
 
-      // Search vocabulary
       const vocabList = chapterData.vocabulary;
       if (vocabList && Array.isArray(vocabList)) {
         vocabList.forEach(word => {
@@ -67,7 +62,6 @@ function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
         });
       }
 
-      // Search grammar patterns
       const grammarList = chapterData.grammar;
       if (grammarList && Array.isArray(grammarList)) {
         grammarList.forEach(g => {
@@ -95,17 +89,12 @@ function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
       }
     });
 
-    // Limit results and ensure dropdown opens
-    setResults(foundResults.slice(0, 15));
-    if (foundResults.length > 0) {
-      setIsOpen(true);
-    }
+    return foundResults.slice(0, 15);
   }, [query, allChapters]);
 
   const handleResultClick = (result) => {
     onResultClick(result);
     setQuery('');
-    setResults([]);
     setIsOpen(false);
   };
 
@@ -125,7 +114,7 @@ function SearchBar({ vocabulary, grammar, onResultClick, allChapters }) {
           onFocus={() => setIsOpen(true)}
         />
         {query && (
-          <button className="search-clear" onClick={() => { setQuery(''); setResults([]); }}>
+          <button className="search-clear" onClick={() => { setQuery(''); }}>
             ✕
           </button>
         )}
